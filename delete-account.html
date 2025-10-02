@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TaskMate — Delete Account Request</title>
+  <meta name="description" content="Request deletion of your TaskMate account and associated data." />
+  <style>
+    :root {
+      --blue:#1E88E5;
+      --blue-dark:#1669b8;
+      --muted:#6b7280;
+      --card:#ffffff;
+      --bg:#f4f8fc;
+      --radius:12px;
+      --accent:var(--blue);
+      --gap:18px;
+      font-family: Inter, sans-serif;
+    }
+    body{margin:0;background:var(--bg);color:#0b1220;line-height:1.55}
+    .wrap{max-width:600px;margin:40px auto;padding:24px}
+    header{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+    .logo{width:64px;height:64px;border-radius:14px;background:linear-gradient(135deg,var(--blue),var(--blue-dark));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:20px}
+    h1{font-size:22px;margin:0}
+    form{background:var(--card);padding:20px;border-radius:var(--radius);box-shadow:0 6px 20px rgba(14,32,62,0.06);display:flex;flex-direction:column;gap:14px}
+    input, textarea{padding:10px;border-radius:8px;border:1px solid #ccc;font-size:14px;width:100%;box-sizing:border-box}
+    button{background:var(--accent);color:#fff;padding:12px 16px;border:none;border-radius:10px;font-weight:700;cursor:pointer}
+    button:hover{background:var(--blue-dark)}
+    .note{font-size:14px;color:var(--muted)}
+    a.delete-link{color:var(--blue-dark);text-decoration:underline;font-weight:600}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">TM</div>
+      <div>
+        <h1>Delete Account Request</h1>
+        <div class="note">Request to delete your account and associated data.</div>
+      </div>
+    </header>
+
+    <form id="deleteForm" action="mailto:zsnapypro@gmail.com" method="post" enctype="text/plain">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Your full name" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="Your email" required>
+
+      <label for="reason">Reason (optional)</label>
+      <textarea id="reason" name="reason" placeholder="Reason for deleting account"></textarea>
+
+      <button type="submit">Request Account Deletion</button>
+    </form>
+
+    <p class="note" style="margin-top:12px">
+      Or you can click this link to request account deletion: 
+      <a class="delete-link" href="mailto:zsnapypro@gmail.com?subject=Account Deletion Request&body=Please delete my TaskMate account and all associated data.%0D%0AName:%20%0D%0AEmail:%20">Request Deletion via Email</a>
+    </p>
+  </div>
+</body>
+</html>
